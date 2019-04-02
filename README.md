@@ -1,2 +1,2 @@
-# spring-boot-samples
-Spring Boot 教学案例
+# Spring Boot 教学案例
+
