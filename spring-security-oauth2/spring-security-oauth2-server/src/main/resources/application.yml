@@ -19,3 +19,7 @@ spring:
 
 server:
   port: 8080
+
+mybatis:
+  type-aliases-package: com.funtl.oauth2.server.domain
+  mapper-locations: classpath:mapper/*.xml

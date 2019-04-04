@@ -11,6 +11,7 @@
 
     <properties>
         <spring-cloud.version>Greenwich.RELEASE</spring-cloud.version>
+        <spring-boot-mapper.version>2.1.5</spring-boot-mapper.version>
     </properties>
 
     <licenses>
@@ -60,6 +61,11 @@
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
                 <version>${mysql.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>tk.mybatis</groupId>
+                <artifactId>mapper-spring-boot-starter</artifactId>
+                <version>${spring-boot-mapper.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
