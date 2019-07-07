@@ -1,0 +1,23 @@
+spring:
+  application:
+    # 服务名
+    name: service-consumer
+  cloud:
+    nacos:
+      discovery:
+        # 服务注册中心
+        server-addr: 192.168.141.132:8848
+
+server:
+  # 服务端口
+  port: 8080
+
+management:
+  # 端点检查（健康检查）
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+user:
+  name: "灶门炭治郎"
