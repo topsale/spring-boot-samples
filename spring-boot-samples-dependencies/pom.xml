@@ -10,10 +10,14 @@
     <url>http://www.funtl.com</url>
 
     <properties>
+        <dubbo.version>2.7.2</dubbo.version>
+        <dubbo-kryo.version>2.7.2</dubbo-kryo.version>
+        <dubbo-actuator.version>2.7.1</dubbo-actuator.version>
         <spring-cloud.version>Greenwich.RELEASE</spring-cloud.version>
         <spring-cloud-alibaba.verion>0.9.0.RELEASE</spring-cloud-alibaba.verion>
         <spring-boot-mapper.version>2.1.5</spring-boot-mapper.version>
         <spring-boot-pagehelper.version>1.2.12</spring-boot-pagehelper.version>
+        <alibaba-spring-context-support.version>1.0.2</alibaba-spring-context-support.version>
     </properties>
 
     <licenses>
@@ -80,6 +84,42 @@
                 <groupId>com.github.pagehelper</groupId>
                 <artifactId>pagehelper-spring-boot-starter</artifactId>
                 <version>${spring-boot-pagehelper.version}</version>
+            </dependency>
+
+            <!-- Spring Cloud Alibaba Dubbo -->
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo</artifactId>
+                <version>${dubbo.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.springframework</groupId>
+                        <artifactId>spring</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>javax.servlet</groupId>
+                        <artifactId>servlet-api</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>log4j</groupId>
+                        <artifactId>log4j</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo-spring-boot-actuator</artifactId>
+                <version>${dubbo-actuator.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.spring</groupId>
+                <artifactId>spring-context-support</artifactId>
+                <version>${alibaba-spring-context-support.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo-serialization-kryo</artifactId>
+                <version>${dubbo-kryo.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

@@ -20,6 +20,7 @@
         <module>spring-boot-samples-dependencies</module>
         <module>spring-boot-demo</module>
         <module>spring-cloud-alibaba</module>
+        <module>spring-cloud-alibaba-dubbo</module>
         <module>spring-security-oauth2</module>
     </modules>
 
