@@ -12,6 +12,7 @@
     <properties>
         <spring-cloud.version>Greenwich.RELEASE</spring-cloud.version>
         <spring-boot-mapper.version>2.1.5</spring-boot-mapper.version>
+        <spring-boot-pagehelper.version>1.2.12</spring-boot-pagehelper.version>
     </properties>
 
     <licenses>
@@ -66,6 +67,11 @@
                 <groupId>tk.mybatis</groupId>
                 <artifactId>mapper-spring-boot-starter</artifactId>
                 <version>${spring-boot-mapper.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.pagehelper</groupId>
+                <artifactId>pagehelper-spring-boot-starter</artifactId>
+                <version>${spring-boot-pagehelper.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
