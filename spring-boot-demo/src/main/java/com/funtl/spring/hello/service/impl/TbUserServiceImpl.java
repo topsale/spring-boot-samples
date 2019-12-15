@@ -1,7 +1,7 @@
-package com.funtl.spring.boot.service.impl;
+package com.funtl.spring.hello.service.impl;
 
-import com.funtl.spring.boot.mapper.TbUserMapper;
-import com.funtl.spring.boot.service.TbUserService;
+import com.funtl.spring.hello.mapper.TbUserMapper;
+import com.funtl.spring.hello.service.TbUserService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

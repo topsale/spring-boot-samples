@@ -1,7 +1,7 @@
-package com.funtl.spring.boot;
+package com.kmb.boot;
 
-import com.funtl.spring.boot.domain.TbUser;
-import com.funtl.spring.boot.mapper.TbUserMapper;
+import com.funtl.spring.hello.domain.TbUser;
+import com.funtl.spring.hello.mapper.TbUserMapper;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.junit.Test;
@@ -94,7 +94,6 @@ public class SpringBootDemoApplicationTests {
     public void testPage() {
         Example example = new Example(TbUser.class);
         example.createCriteria().andLike("username", "z%");
-
         PageHelper.startPage(1, 5);
         PageInfo<TbUser> pageInfo = new PageInfo<>(tbUserMapper.selectByExample(example));
         System.out.println(pageInfo.getTotal());

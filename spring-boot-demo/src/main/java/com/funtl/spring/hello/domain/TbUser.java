@@ -1,4 +1,4 @@
-package com.funtl.spring.boot.domain;
+package com.funtl.spring.hello.domain;
 
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;

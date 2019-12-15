@@ -1,4 +1,4 @@
-package com.funtl.spring.boot.controller;
+package com.funtl.spring.hello.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
