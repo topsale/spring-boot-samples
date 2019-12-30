@@ -1,14 +1,15 @@
-package com.funtl.spring.cloud.alibaba.provider;
+package com.funtl.spring.cloud.alibaba.consumer;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-public class ProviderApplication {
+@EnableFeignClients
+public class SpringCloudConsumerApplication {
     public static void main(String[] args) {
-        SpringApplication.run(ProviderApplication.class, args);
+        SpringApplication.run(SpringCloudConsumerApplication.class, args);
     }
 }
-
