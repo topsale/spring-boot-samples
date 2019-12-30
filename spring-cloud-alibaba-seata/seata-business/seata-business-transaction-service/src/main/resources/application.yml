@@ -1,0 +1,30 @@
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  application:
+    name: seata-business-transaction
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.2.121:8848
+    sentinel:
+      transport:
+        dashboard: localhost:8888
+
+dubbo:
+  scan:
+    base-packages: com.funtl.spring.cloud.alibaba.seata.controller
+  protocol:
+    name: dubbo
+    port: -1
+  registry:
+    address: nacos://192.168.2.121:8848
+
+server:
+  port: 12001
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

@@ -1,0 +1,50 @@
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  application:
+    name: seata-provider-order-item
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.2.121:8848
+    sentinel:
+      transport:
+        dashboard: localhost:8888
+    alibaba:
+      seata:
+        tx-service-group: tx-group
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    jdbc-url: jdbc:mysql://192.168.2.121:3346/db_order_item?useUnicode=true&characterEncoding=utf-8&serverTimezone=Hongkong&useSSL=false
+    username: root
+    password: 123456
+    hikari:
+      minimum-idle: 5
+      idle-timeout: 600000
+      maximum-pool-size: 10
+      auto-commit: true
+      pool-name: MyHikariCP
+      max-lifetime: 1800000
+      connection-timeout: 30000
+      connection-test-query: SELECT 1
+
+dubbo:
+  scan:
+    base-packages: com.funtl.spring.cloud.alibaba.seata.service
+  protocol:
+    name: dubbo
+    port: -1
+  provider:
+    loadbalance: roundrobin
+  registry:
+    address: nacos://192.168.2.121:8848
+
+mybatis:
+  type-aliases-package: com.funtl.spring.cloud.alibaba.provider.domain
+  mapper-locations: classpath:mapper/*.xml
+
+#logging:
+#  level:
+#    com.funtl.spring.cloud.alibaba.provider.mapper: debug
+#    io.seata.core: debug

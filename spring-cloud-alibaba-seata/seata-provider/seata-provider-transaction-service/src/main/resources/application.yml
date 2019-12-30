@@ -1,0 +1,31 @@
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  application:
+    name: seata-provider-transaction
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.2.121:8848
+    sentinel:
+      transport:
+        dashboard: localhost:8888
+    alibaba:
+      seata:
+        tx-service-group: tx-group
+
+dubbo:
+  scan:
+    base-packages: com.funtl.spring.cloud.alibaba.seata.service
+  protocol:
+    name: dubbo
+    port: -1
+  provider:
+    loadbalance: roundrobin
+  registry:
+    address: nacos://192.168.2.121:8848
+
+#logging:
+#  level:
+#    com.funtl.spring.cloud.alibaba.provider.mapper: debug
+#    io.seata.core: debug
