@@ -6,7 +6,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.1.6.RELEASE</version>
+        <version>2.2.2.RELEASE</version>
         <relativePath/>
     </parent>
 
@@ -19,12 +19,15 @@
     <modules>
         <module>spring-boot-samples-dependencies</module>
         <module>spring-boot-demo</module>
+        <module>spring-boot-commons</module>
         <module>spring-cloud-alibaba</module>
         <module>spring-cloud-alibaba-dubbo</module>
+        <module>spring-cloud-alibaba-seata</module>
         <module>spring-security-oauth2</module>
     </modules>
 
     <properties>
+        <skipTests>true</skipTests>
         <java.version>1.8</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
@@ -66,7 +69,7 @@
                 <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
-                <spring-javaformat.version>0.0.9</spring-javaformat.version>
+                <spring-javaformat.version>0.0.17</spring-javaformat.version>
             </properties>
             <build>
                 <plugins>
@@ -136,6 +139,15 @@
 
     <repositories>
         <repository>
+            <id>alimaven</id>
+            <name>aliyun maven</name>
+            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        
+        <repository>
             <id>spring-milestone</id>
             <name>Spring Milestone</name>
             <url>https://repo.spring.io/milestone</url>
@@ -154,6 +166,15 @@
     </repositories>
 
     <pluginRepositories>
+        <pluginRepository>
+            <id>alimaven</id>
+            <name>aliyun maven</name>
+            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+
         <pluginRepository>
             <id>spring-milestone</id>
             <name>Spring Milestone</name>

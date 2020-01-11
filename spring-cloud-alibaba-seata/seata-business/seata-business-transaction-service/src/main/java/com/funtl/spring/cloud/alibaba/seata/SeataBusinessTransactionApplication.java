@@ -1,14 +1,13 @@
-package com.funtl.spring.cloud.alibaba.provider;
+package com.funtl.spring.cloud.alibaba.seata;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
-@SpringBootApplication
 @EnableDiscoveryClient
-public class ProviderApplication {
+@SpringBootApplication
+public class SeataBusinessTransactionApplication {
     public static void main(String[] args) {
-        SpringApplication.run(ProviderApplication.class, args);
+        SpringApplication.run(SeataBusinessTransactionApplication.class, args);
     }
 }
-
