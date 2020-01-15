@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.funtl.apache.shardingsphere.mapper.TbOrderMapper">
+  <resultMap id="BaseResultMap" type="com.funtl.apache.shardingsphere.domain.TbOrder">
+    <!--@mbg.generated generated on Wed Jan 15 12:50:43 CST 2020.-->
+    <!--@Table tb_order-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="order_id" jdbcType="BIGINT" property="orderId" />
+    <result column="user_id" jdbcType="BIGINT" property="userId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated generated on Wed Jan 15 12:50:43 CST 2020.-->
+    id, order_id, user_id
+  </sql>
+</mapper>
