@@ -14,8 +14,7 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
 
     @Override
     public void configure(HttpSecurity http) throws Exception {
-        http
-                .exceptionHandling()
+        http.formLogin().and().exceptionHandling()
                 .and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
@@ -26,5 +25,6 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
                 .antMatchers("/update/**").hasAuthority("SystemContentUpdate")
                 .antMatchers("/delete/**").hasAuthority("SystemContentDelete");
     }
+
 
 }

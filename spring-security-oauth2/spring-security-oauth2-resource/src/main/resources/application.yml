@@ -4,7 +4,7 @@ spring:
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://192.168.141.128:3307/oauth2_resource?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    url: jdbc:mysql://129.211.60.191:3306/oauth2_resource?useUnicode=true&characterEncoding=utf-8&useSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
     username: root
     password: 123456
     hikari:
@@ -20,8 +20,8 @@ spring:
 security:
   oauth2:
     client:
-      client-id: client
-      client-secret: secret
+      client-id: 3cc2ecb1331b1c5623ba
+      client-secret: c21e3c6271b23a0b59c0d0de09c9ae7ed17c82e1
       access-token-uri: http://localhost:8080/oauth/token
       user-authorization-uri: http://localhost:8080/oauth/authorize
     resource:
@@ -34,8 +34,7 @@ server:
 
 mybatis:
   type-aliases-package: com.funtl.oauth2.resource.domain
-  mapper-locations: classpath:mapper/*.xml
-
+  mapper-locations: classpath:tk/mybatis/mapper/*.xml
 logging:
   level:
     root: INFO

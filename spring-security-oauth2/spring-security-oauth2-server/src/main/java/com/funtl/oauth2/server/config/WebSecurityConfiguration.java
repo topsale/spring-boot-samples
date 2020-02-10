@@ -3,6 +3,7 @@ package com.funtl.oauth2.server.config;
 import com.funtl.oauth2.server.config.service.UserDetailsServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
@@ -21,7 +22,17 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
         // 设置默认的加密方式
         return new BCryptPasswordEncoder();
     }
-
+    /**
+     * 用于支持 password 模式
+     *
+     * @return
+     * @throws Exception
+     */
+    @Bean
+    @Override
+    public AuthenticationManager authenticationManagerBean() throws Exception {
+        return super.authenticationManagerBean();
+    }
     @Bean
     @Override
     public UserDetailsService userDetailsService() {
@@ -39,4 +50,6 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
         // 将 check_token 暴露出去，否则资源服务器访问时报 403 错误
         web.ignoring().antMatchers("/oauth/check_token");
     }
+
+
 }
