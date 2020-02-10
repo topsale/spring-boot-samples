@@ -10,14 +10,16 @@
     <url>http://www.funtl.com</url>
 
     <properties>
-        <dubbo.version>2.7.2</dubbo.version>
-        <dubbo-kryo.version>2.7.2</dubbo-kryo.version>
-        <dubbo-actuator.version>2.7.1</dubbo-actuator.version>
-        <spring-cloud.version>Greenwich.RELEASE</spring-cloud.version>
-        <spring-cloud-alibaba.verion>0.9.0.RELEASE</spring-cloud-alibaba.verion>
+        <dubbo.version>2.7.4.1</dubbo.version>
+        <spring-cloud.version>Hoxton.RELEASE</spring-cloud.version>
+        <spring-cloud-alibaba.verion>2.1.1.RELEASE</spring-cloud-alibaba.verion>
         <spring-boot-mapper.version>2.1.5</spring-boot-mapper.version>
-        <spring-boot-pagehelper.version>1.2.12</spring-boot-pagehelper.version>
-        <alibaba-spring-context-support.version>1.0.2</alibaba-spring-context-support.version>
+        <spring-boot-pagehelper.version>1.2.13</spring-boot-pagehelper.version>
+        <alibaba-seata.version>1.0.0</alibaba-seata.version>
+        <alibaba-spring-context-support.version>1.0.5</alibaba-spring-context-support.version>
+        <apache-sharding-sphere.version>4.0.0-RC3</apache-sharding-sphere.version>
+
+        <okhttp3.version>4.2.2</okhttp3.version>
     </properties>
 
     <licenses>
@@ -46,35 +48,65 @@
                 <scope>import</scope>
             </dependency>
             <dependency>
-                <groupId>org.springframework.cloud</groupId>
+                <groupId>com.alibaba.cloud</groupId>
                 <artifactId>spring-cloud-alibaba-dependencies</artifactId>
                 <version>${spring-cloud-alibaba.verion}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
 
-            <!-- 数据库 -->
+            <!-- Apache Dubbo -->
             <dependency>
-                <groupId>com.zaxxer</groupId>
-                <artifactId>HikariCP</artifactId>
-                <version>${hikaricp.version}</version>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo</artifactId>
+                <version>${dubbo.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-jdbc</artifactId>
-                <exclusions>
-                    <!-- 排除 tomcat-jdbc 以使用 HikariCP -->
-                    <exclusion>
-                        <groupId>org.apache.tomcat</groupId>
-                        <artifactId>tomcat-jdbc</artifactId>
-                    </exclusion>
-                </exclusions>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo-registry-nacos</artifactId>
+                <version>${dubbo.version}</version>
             </dependency>
             <dependency>
-                <groupId>mysql</groupId>
-                <artifactId>mysql-connector-java</artifactId>
-                <version>${mysql.version}</version>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo-spring-boot-starter</artifactId>
+                <version>${dubbo.version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo-serialization-kryo</artifactId>
+                <version>${dubbo.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.spring</groupId>
+                <artifactId>spring-context-support</artifactId>
+                <version>${alibaba-spring-context-support.version}</version>
+            </dependency>
+
+            <!-- Apache ShardingSphere -->
+            <dependency>
+                <groupId>org.apache.shardingsphere</groupId>
+                <artifactId>sharding-jdbc-spring-boot-starter</artifactId>
+                <version>${apache-sharding-sphere.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.shardingsphere</groupId>
+                <artifactId>sharding-jdbc-spring-namespace</artifactId>
+                <version>${apache-sharding-sphere.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.shardingsphere</groupId>
+                <artifactId>sharding-transaction-base-seata-at</artifactId>
+                <version>${apache-sharding-sphere.version}</version>
+            </dependency>
+
+            <!-- Alibaba Seata -->
+            <dependency>
+                <groupId>io.seata</groupId>
+                <artifactId>seata-spring-boot-starter</artifactId>
+                <version>${alibaba-seata.version}</version>
+            </dependency>
+
+            <!-- Others -->
             <dependency>
                 <groupId>tk.mybatis</groupId>
                 <artifactId>mapper-spring-boot-starter</artifactId>
@@ -85,46 +117,24 @@
                 <artifactId>pagehelper-spring-boot-starter</artifactId>
                 <version>${spring-boot-pagehelper.version}</version>
             </dependency>
-
-            <!-- Spring Cloud Alibaba Dubbo -->
             <dependency>
-                <groupId>org.apache.dubbo</groupId>
-                <artifactId>dubbo</artifactId>
-                <version>${dubbo.version}</version>
-                <exclusions>
-                    <exclusion>
-                        <groupId>org.springframework</groupId>
-                        <artifactId>spring</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>javax.servlet</groupId>
-                        <artifactId>servlet-api</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>log4j</groupId>
-                        <artifactId>log4j</artifactId>
-                    </exclusion>
-                </exclusions>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.dubbo</groupId>
-                <artifactId>dubbo-spring-boot-actuator</artifactId>
-                <version>${dubbo-actuator.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.alibaba.spring</groupId>
-                <artifactId>spring-context-support</artifactId>
-                <version>${alibaba-spring-context-support.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.dubbo</groupId>
-                <artifactId>dubbo-serialization-kryo</artifactId>
-                <version>${dubbo-kryo.version}</version>
+                <groupId>com.squareup.okhttp3</groupId>
+                <artifactId>okhttp</artifactId>
+                <version>${okhttp3.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
 
     <repositories>
+        <repository>
+            <id>alimaven</id>
+            <name>aliyun maven</name>
+            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+
         <repository>
             <id>spring-milestone</id>
             <name>Spring Milestone</name>
@@ -144,6 +154,15 @@
     </repositories>
 
     <pluginRepositories>
+        <pluginRepository>
+            <id>alimaven</id>
+            <name>aliyun maven</name>
+            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+
         <pluginRepository>
             <id>spring-milestone</id>
             <name>Spring Milestone</name>
