@@ -9,7 +9,7 @@
         <version>1.0.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>spring-boot-commons</artifactId>
+    <artifactId>apache-shardingsphere</artifactId>
     <packaging>pom</packaging>
     <url>http://www.funtl.com</url>
 
@@ -29,7 +29,6 @@
     </developers>
 
     <modules>
-        <module>commons-mapper</module>
-        <module>commons-utils</module>
+        <module>sharding-jdbc</module>
     </modules>
 </project>

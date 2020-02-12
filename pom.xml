@@ -24,6 +24,7 @@
         <module>spring-cloud-alibaba-dubbo</module>
         <module>spring-cloud-alibaba-seata</module>
         <module>spring-security-oauth2</module>
+        <module>apache-shardingsphere</module>
     </modules>
 
     <properties>
