@@ -34,7 +34,7 @@ server:
 
 mybatis:
   type-aliases-package: com.funtl.oauth2.resource.domain
-  mapper-locations: classpath:mapper/*.xml
+  mapper-locations: classpath:tk/mybatis/mapper/*.xml
 
 logging:
   level:
