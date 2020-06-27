@@ -12,7 +12,7 @@ spring:
       ds0:
         type: com.zaxxer.hikari.HikariDataSource
         driver-class-name: com.mysql.jdbc.Driver
-        jdbc-url: jdbc:mysql://192.168.2.121:3310/myshop_0?useUnicode=true&characterEncoding=utf-8&serverTimezone=Hongkong&useSSL=false
+        jdbc-url: jdbc:mysql://129.211.60.191:3306/myshop_0?useUnicode=true&characterEncoding=utf-8&serverTimezone=Hongkong&useSSL=false
         username: root
         password: '123456'
         hikari:
@@ -27,7 +27,7 @@ spring:
       ds1:
         type: com.zaxxer.hikari.HikariDataSource
         driver-class-name: com.mysql.jdbc.Driver
-        jdbc-url: jdbc:mysql://192.168.2.121:3311/myshop_1?useUnicode=true&characterEncoding=utf-8&serverTimezone=Hongkong&useSSL=false
+        jdbc-url: jdbc:mysql://129.211.60.191:3306/myshop_1?useUnicode=true&characterEncoding=utf-8&serverTimezone=Hongkong&useSSL=false
         username: root
         password: '123456'
         hikari:

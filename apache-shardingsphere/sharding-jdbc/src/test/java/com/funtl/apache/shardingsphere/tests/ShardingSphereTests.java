@@ -25,8 +25,8 @@ public class ShardingSphereTests {
     @Test
     public void testInsertOrder() {
         TbOrder tbOrder = new TbOrder();
-        tbOrder.setOrderId(1L);
-        tbOrder.setUserId(1L);
+        tbOrder.setOrderId(3L);
+        tbOrder.setUserId(2L);
 
         tbOrderMapper.insert(tbOrder);
     }

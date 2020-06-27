@@ -19,7 +19,7 @@ public class SeataBusinessTransactionController {
     public String createOrder() {
         TbOrder order = new TbOrder();
         order.setOrderId(1);
-        order.setUserId(1L);
+        order.setUserId(2L);
 
         TbOrderItem orderItem = new TbOrderItem();
         orderItem.setUserId(1L);
