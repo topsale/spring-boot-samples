@@ -34,12 +34,17 @@ public class TbPermission implements Serializable {
      */
     @Column(name = "`enname`")
     private String enname;
-
+    /**
+     * url回调地址
+     */
+    @Column(name = "url")
+    private String url;
     /**
      * 备注
      */
     @Column(name = "description")
     private String description;
+
 
     @Column(name = "created")
     private Date created;

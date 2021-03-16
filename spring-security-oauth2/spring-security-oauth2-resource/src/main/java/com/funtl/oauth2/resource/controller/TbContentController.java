@@ -5,6 +5,7 @@ import com.funtl.oauth2.resource.dto.ResponseResult;
 import com.funtl.oauth2.resource.service.TbContentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -26,6 +27,7 @@ public class TbContentController {
      *
      * @return
      */
+//    @PreAuthorize("hasAuthority('SystemContent')")
     @GetMapping("/")
     public ResponseResult<List<TbContent>> selectAll() {
         return new ResponseResult<>(Integer.valueOf(HttpStatus.OK.value()), HttpStatus.OK.toString(), tbContentService.selectAll());
@@ -37,6 +39,7 @@ public class TbContentController {
      * @param id
      * @return
      */
+//    @PreAuthorize("hasAuthority('SystemContentView')")
     @GetMapping("/view/{id}")
     public ResponseResult<TbContent> getById(@PathVariable Long id) {
         return new ResponseResult<>(Integer.valueOf(HttpStatus.OK.value()), HttpStatus.OK.toString(), tbContentService.getById(id));
@@ -48,6 +51,7 @@ public class TbContentController {
      * @param tbContent
      * @return
      */
+//    @PreAuthorize("hasAuthority('SystemContentInsert')")
     @PostMapping("/insert")
     public ResponseResult<Integer> insert(@RequestBody TbContent tbContent) {
         int count = tbContentService.insert(tbContent);
@@ -65,6 +69,7 @@ public class TbContentController {
      * @param tbContent
      * @return
      */
+//    @PreAuthorize("hasAuthority('SystemContentUpdate')")
     @PutMapping("/update")
     public ResponseResult<Integer> update(@RequestBody TbContent tbContent) {
         int count = tbContentService.update(tbContent);
@@ -82,6 +87,7 @@ public class TbContentController {
      * @param id
      * @return
      */
+//    @PreAuthorize("hasAuthority('SystemContentDelete')")
     @DeleteMapping("/delete/{id}")
     public ResponseResult<Integer> delete(@PathVariable Long id) {
         int count = tbContentService.delete(id);

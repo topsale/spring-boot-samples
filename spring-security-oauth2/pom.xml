@@ -10,7 +10,7 @@
     </parent>
 
     <artifactId>spring-security-oauth2</artifactId>
-    <packaging>pom</packaging>
+    <packaging>war</packaging>
     <url>http://www.funtl.com</url>
 
     <modules>

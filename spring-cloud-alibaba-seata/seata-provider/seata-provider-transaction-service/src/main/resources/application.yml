@@ -6,10 +6,10 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: 192.168.2.121:8848
+        server-addr: 129.211.60.191:8848
     sentinel:
       transport:
-        dashboard: localhost:8888
+        dashboard: 129.211.60.191:8088
     alibaba:
       seata:
         tx-service-group: tx-group
@@ -23,7 +23,7 @@ dubbo:
   provider:
     loadbalance: roundrobin
   registry:
-    address: nacos://192.168.2.121:8848
+    address: nacos://129.211.60.191:8848
 
 #logging:
 #  level:
